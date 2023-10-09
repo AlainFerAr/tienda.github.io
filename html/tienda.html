@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <!--Agregar título-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">WarGames</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tienda.html">Tienda</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Club
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="usuario.html">Usuario</a></li>
+              <li><a class="dropdown-item" href="reservas.html">Reservar</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="inicioSesion.html" id="sesion">Iniciar Sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="carrito.html">
+          <span id="spanCarrito" style="position: center; color: white; background-color: red;">0</span>
+          <img src="/img/carrito.png" alt="carrito" style="height: 30px;">
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- NavBar -->
+  <!-- Filtos -->
+  <p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+      aria-expanded="false" aria-controls="collapseExample">
+      Filtrar
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Ordenar por:
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><button class="dropdown-item" onclick="ordenarPrecio()" type="button">Precio</button></li>
+          <li><button class="dropdown-item" onclick="ordenarNombre()" type="button">Nombre</button></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Filtrar:
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><button class="dropdown-item" onclick="mostrarCategoria('JuegosMesa')" type="button">Juegos de
+              mesa</button></li>
+          <li><button class="dropdown-item" onclick="mostrarCategoria('miniaturas')" type="button">Miniaturas</button>
+          </li>
+          <li><button class="dropdown-item" onclick="mostrarCategoria('hobby')" type="button">Hobby</button></li>
+        </ul>
+      </div>
+      <div class="container-fluid">
+        <form class="d-flex">
+          <input class="form-control me-2" id="filtro" onkeyup="filtrar()" type="search" placeholder="Buscar"
+            aria-label="Search">
+          <button class="btn btn-dark" onclick="filtrar()" type="button">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Filtos -->
+  <!-- Section-->
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="central">
+        <!-- Aquí se cargan los productos de la tienda -->
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>WarGames
+            </h6>
+            <p>
+              Tu tienda de juegos de mesa, miniaturas y hobby.
+            </p>
+            <p>
+              <a href="info.html" class="text-reset">+ info</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Marcas asociadas
+            </h6>
+            <p>
+              <a href="https://www.games-workshop.com/es" class="text-reset" target="_blank">Games workshop</a>
+            </p>
+            <p>
+              <a href="https://company.wizards.com/es" class="text-reset" target="_blank">Wizards</a>
+            </p>
+            <p>
+              <a href="https://devir.es/" class="text-reset" target="_blank">Devir</a>
+            </p>
+            <p>
+              <a href="http://www.edgeent.com/home" class="text-reset" target="_blank">Edge</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              redes sociales
+            </h6>
+            <p>
+              <a href="https://es-es.facebook.com/" class="text-reset" target="_blank">Instagram</a>
+            </p>
+            <p>
+              <a href="https://www.instagram.com/" class="text-reset" target="_blank">Facebook</a>
+            </p>
+            <p>
+              <a href="https://www.tiktok.com/es/" class="text-reset" target="_blank">TikTok</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i> Móstoles, Madrid, Es</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@wargames.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  </footer>
+  <!-- Footer -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+<script src="../js/Producto.js"></script>
+<script src="../js/productos.js"></script>
+
+</html>
